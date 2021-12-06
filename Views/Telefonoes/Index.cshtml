@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Parcial3Movil.Models.Telefono>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Usuario.cshtml";
+}
+
+<h2 class="my-3">Telefonos en el sistema</h2>
+
+<div class="form-group d-flex mb-3">
+    @Html.ActionLink("Crear nuevo telefono", "Create", null, new { @class = "btn btn btn-primary me-2" })
+    <a href="~/Eliminar/Index" class="btn btn-danger">Dar de baja</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desvio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personas.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personas.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.NroTelefono }, new { @class = "btn btn btn-outline-dark" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.NroTelefono }, new { @class = "btn btn btn-outline-dark" })
+            </td>
+        </tr>
+    }
+
+</table>

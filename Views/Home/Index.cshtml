@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .masthead {
+        height: 100vh;
+        min-height: 500px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.301)), url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <form action="@Url.Content("~/Personas/Create")">
+                <div class="col-12 text-center">
+                    <h1 class="fw-bold text-light text-uppercase">Bienvenido a MovilApp Compañía telefonica</h1>
+                    <p class="lead text-light">Revisa tu saldo, envia mensajes y gestiona tus números</p>
+                    <button class="btn btn-success">Empezar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>

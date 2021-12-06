@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Parcial3Movil.Models.Personas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Usuario.cshtml";
+}
+
+<h2 class="my-3">Mis personas</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva persona", "Create", null, new { @class = "btn btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Cedula }, new { @class = "btn btn-outline-dark" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Cedula }, new { @class = "btn btn-outline-dark" }) 
+        </td>
+    </tr>
+}
+
+</table>

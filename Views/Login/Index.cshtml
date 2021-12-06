@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Iniciar sesión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .masthead {
+        height: 100vh;
+        min-height: 500px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.301)), url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-12 col-sm-9 col-md-6 col-lg-4">
+                <div class="card p-4">
+                    <form action="@Url.Content("~/Login/Ingresar")" method="post">
+                        <div class="mb-3">
+                            <label for="inputId1" class="form-label">Cédula</label>
+                            <input type="number" name="cedula" class="form-control" id="inputId1" aria-describedby="idHelp">
+                            <div id="idHelp" class="form-text">Nunca compartiremos su identificación con nadie más.</div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="inputPassword1" class="form-label">Contraseña</label>
+                            <input type="password" name="pass" class="form-control" id="inputPassword1">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
